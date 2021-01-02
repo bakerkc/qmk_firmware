@@ -186,7 +186,8 @@ void matrix_init_user(void) {
     rgb_time_out_enable = false;                        // Disable RGB timeout by default. Enable using toggle key.
     rgb_time_out_user_value = false;                    // Has to have the same initial value as rgb_time_out_enable.
     rgb_enabled_flag = true;                            // Initially, keyboard RGB is enabled. Change to false config.h initializes RGB disabled.
-    rgb_time_out_fast_mode_enabled = false;             // RGB timeout fast mode disabled initially.
+    //rgb_time_out_fast_mode_enabled = false;             // RGB timeout fast mode disabled initially.
+    rgb_time_out_fast_mode_enabled = true;             // RGB timeout fast mode enabled initially.
     rgb_time_out_saved_flag = rgb_matrix_get_flags();   // Save RGB matrix state for when keyboard comes back from ide.
 };
 

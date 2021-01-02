@@ -27,41 +27,169 @@ static const char * sendstring_commands[] = {
 //Associate our tap dance key with its functionality
 qk_tap_dance_action_t tap_dance_actions[] = {
     [TD_LGUI_ML] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_LGUI, _ML),
-    [TD_APP_YL] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_APP, _YL),
+//   [TD_APP_YL] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_APP, _YL),
+    [TD_APP_AL] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_APP, _AL),
     [TD_CTRL_TERM] = ACTION_TAP_DANCE_DOUBLE(KC_LCTRL, A(KC_T)),
     [TD_TILDE_HASH] = ACTION_TAP_DANCE_DOUBLE(KC_BSLS, KC_HASH),
-    [TD_RCTRL_AL] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_RCTL, _AL)
+    [TD_RCTRL_A2] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_RCTL, _A2),
+    //[TD_RALT_A2] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_RALT, _A2),
 };
 
 enum unicode_names {
-    U_ALPH,
     L_ALPH,
-    U_BETA,
     L_BETA,
-    U_GAMM,
     L_GAMM,
-    U_DELT,
     L_DELT,
-    U_EPSI,
     L_EPSI,
+    L_ZETA,
+    L_ETA,
+    L_THET,
+    L_IOTA,
+    L_KAPP,
+    L_LAMB,
+    L_MU,
+    L_NU,
+    L_XI,
+    L_OMIC,
+    L_PI,
+    L_RHO,
+    L_SIGM,
+    L_TAU,
+    L_UPSI,
+    L_PHI,
+    L_CHI,
+    L_PSI,
+    L_OMEG,
+    U_ALPH,
+    U_BETA,
+    U_GAMM,
+    U_DELT,
+    U_EPSI,
     U_ZETA,
-    L_ZETA
+    U_ETA,
+    U_THET,
+    U_IOTA,
+    U_KAPP,
+    U_LAMB,
+    U_MU,
+    U_NU,
+    U_XI,
+    U_OMIC,
+    U_PI,
+    U_RHO,
+    U_SIGM,
+    U_TAU,
+    U_UPSI,
+    U_PHI,
+    U_CHI,
+    U_PSI,
+    U_OMEG,
+    MTSET,
+    UNION,
+    INTERSECTION,
+    DELTA,
+    NABLA,
+    SUBSET,
+    SUPERSET,
+    NOTSUBSET,
+    NOTSUPSET,
+    ISIN,
+    ISNOTIN,
+    NEQ,
+    IDENT,
+    APPROX,
+    PROP,
+    LTEQ,
+    GTEQ,
+    THFORE,
+    BCOS,
+    DERIVD,
+    INFRD,
+    TTOLOGY,
+    CDICTN,
+    LOGAND,
+    LOGOR,
+    LOGEQUIV,
+    LOGCONS
 };
 
 const uint32_t PROGMEM unicode_map[] = {
-    [U_ALPH] = 0x0391,
-    [L_ALPH] = 0x03B1,
-    [U_BETA] = 0x0392,
-    [L_BETA] = 0x03b2,
-    [U_GAMM] = 0x0393,
-    [L_GAMM] = 0x03b3,
-    [U_DELT] = 0x0394,
-    [L_DELT] = 0x03b4,
-    [U_EPSI] = 0x0395,
-    [L_EPSI] = 0x03b5,
-    [U_ZETA] = 0x0396,
-    [L_ZETA] = 0x03b6,
-};  
+    [L_ALPH] = 	0x03b1,
+    [L_BETA] = 	0x03b2,
+    [L_GAMM] = 	0x03b3,
+    [L_DELT] = 	0x03b4,
+    [L_EPSI] = 	0x03b5,
+    [L_ZETA] = 	0x03b6,
+    [L_ETA] = 	0x03b7,
+    [L_THET] = 	0x03b8,
+    [L_IOTA] = 	0x03b9,
+    [L_KAPP] = 	0x03ba,
+    [L_LAMB] = 	0x03bb,
+    [L_MU] = 	0x03bc,
+    [L_NU] = 	0x03bd,
+    [L_XI] = 	0x03be,
+    [L_OMIC] = 	0x03bf,
+    [L_PI] = 	0x03c0,
+    [L_RHO] = 	0x03c1,
+    [L_SIGM] = 	0x03c3,
+    [L_TAU] = 	0x03c4,
+    [L_UPSI] = 	0x03c5,
+    [L_PHI] = 	0x03c6,
+    [L_CHI] = 	0x03c7,
+    [L_PSI] = 	0x03c8,
+    [L_OMEG] = 	0x03c9,
+    [U_ALPH] = 	0x0391,
+    [U_BETA] = 	0x0392,
+    [U_GAMM] = 	0x0393,
+    [U_DELT] = 	0x0394,
+    [U_EPSI] = 	0x0395,
+    [U_ZETA] = 	0x0396,
+    [U_ETA] = 	0x0397,
+    [U_THET] = 	0x0398,
+    [U_IOTA] = 	0x0399,
+    [U_KAPP] = 	0x039a,
+    [U_LAMB] = 	0x039b,
+    [U_MU] = 	0x039c,
+    [U_NU] = 	0x039d,
+    [U_XI] = 	0x039e,
+    [U_OMIC] = 	0x039f,
+    [U_PI] = 	0x03a0,
+    [U_RHO] = 	0x03a1,
+    [U_SIGM] = 	0x03a3,
+    [U_TAU] = 	0x03a4,
+    [U_UPSI] = 	0x03a5,
+    [U_PHI] = 	0x03a6,
+    [U_CHI] = 	0x03a7,
+    [U_PSI] = 	0x03a8,
+    [U_OMEG] = 	0x03a9,
+    [MTSET] =	0x2205,
+    [UNION] =	0x22C3,
+    [INTERSECTION] =	0x22C2,
+    [DELTA] =	0x2206,
+    [NABLA] =	0x2207,
+    [SUBSET] =	0x2282,
+    [SUPERSET] =	0x2283,
+    [NOTSUBSET] =	0x2284,
+    [NOTSUPSET] =	0x2285,
+    [ISIN] =	0x2208,
+    [ISNOTIN] =	0x2209,
+    [NEQ] =	0x2260,
+    [IDENT] =	0x2261,
+    [APPROX] =	0x2248,
+    [PROP] =	0x221D,
+    [LTEQ] =	0x2266,
+    [GTEQ] =	0x2267,
+    [THFORE] =	0x2234,
+    [BCOS] =	0x2235,
+    [DERIVD] =	0x22A2,
+    [INFRD] =	0x22A8,
+    [TTOLOGY] =	0x22A4,
+    [CDICTN] =	0x22A5,
+    [LOGAND] =	0x2227,
+    [LOGOR] =	0x2228,
+    [LOGEQUIV] =	0x21D4,
+    [LOGCONS] =	0x21D2,
+};
 /*
 enum unicode_names {
     BANG,
@@ -93,16 +221,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,            KC_Q,           KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,       KC_RBRC, TD(TD_TILDE_HASH), KC_DEL,  KC_END,  KC_PGDN,
         KC_CAPS,           KC_A,           KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,       KC_ENT,
         KC_LSFT,           KC_Z,           KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_SFTENT,                                KC_UP,
-        TD(TD_CTRL_TERM),  TD(TD_LGUI_ML), KC_LALT,                   KC_SPC,                             KC_RALT, TT(_FL), TD(TD_APP_YL), TD(TD_RCTRL_AL),  KC_LEFT, KC_DOWN, KC_RGHT
+        TD(TD_CTRL_TERM),  TD(TD_LGUI_ML), KC_LALT,                   KC_SPC,                             KC_RALT, TT(_FL), TD(TD_APP_AL), TD(TD_RCTRL_A2),  KC_LEFT, KC_DOWN, KC_RGHT
     ),
-    [_FL] = LAYOUT(
+    /*[_FL] = LAYOUT(
         _______, DM_PLY1, DM_PLY2, _______,  _______, DM_REC1, DM_REC2, _______,  _______,  DM_RSTP, _______, KC_WAKE, KC_SLEP,          KC_MUTE, TERM_ON, TERM_OFF,
         _______, _______, TG(_ML), TG(_GL),  TG(_VL), TG(_YL), _______, _______,  _______,  ROUT_FM, ROUT_TG, ROUT_VD, ROUT_VI, _______, KC_MSTP, KC_MPLY, KC_VOLU,
         RGB_M_P, RGB_SPD, RGB_VAI, RGB_SPI,  RGB_HUI, RGB_SAI, _______, U_T_AUTO, U_T_AGCR, _______, _______, _______, _______, _______, KC_MPRV, KC_MNXT, KC_VOLD,
         _______, RGB_RMOD,RGB_VAD, RGB_MOD,  RGB_HUD, RGB_SAD, _______, _______,  _______,  _______, _______, _______, _______,
         _______, RGB_TOG, _______, COPY_ALL, _______, MD_BOOT, NK_TOGG, _______,  _______,  _______, _______, _______,                            KC_BRIU,
         _______, _______, _______,                    _______,                              _______, TG(_FL), _______, _______,          _______, KC_BRID, _______
-    ),
+    ),*/
+    [_FL] = LAYOUT(
+        _______, DM_PLY1, DM_PLY2, DM_REC1,  DM_REC2, DM_RSTP, _______, _______,  _______,  ROUT_FM, ROUT_TG, ROUT_VD, ROUT_VI,         KC_MUTE, KC_BRIU, KC_BRID,
+        _______, TG(_AL), TG(_A2), _______, _______, _______, _______,  KC_ACL0, KC_ACL1, KC_ACL2, _______, _______, _______,  _______, KC_MSTP, KC_MPLY, KC_VOLU,
+        RGB_M_P, RGB_SPD, RGB_VAI, RGB_SPI,  RGB_HUI, RGB_SAI, _______, KC_BTN4, KC_BTN3, KC_BTN5, _______, _______, _______,  _______, KC_MPRV, KC_MNXT, KC_VOLD,
+        _______, RGB_RMOD,RGB_VAD, RGB_MOD,  RGB_HUD, RGB_SAD, _______, KC_BTN1, KC_MS_U, KC_BTN2, KC_WH_U, _______, _______,
+        _______, RGB_TOG, _______, COPY_ALL, _______, MD_BOOT, NK_TOGG, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D, _______,                              KC_MS_U,
+        _______, _______, _______,                    _______,                            _______, TG(_FL), _______, _______,            KC_MS_L, KC_MS_D, KC_MS_R
+    ),/*
     [_ML] = LAYOUT(
         _______, KC_ACL0, KC_ACL1, KC_ACL2, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______, _______, _______,
         _______, KC_BTN4, KC_BTN3, KC_BTN5, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
@@ -137,7 +273,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_NO,  KC_Z,  KC_X,  KC_NO, KC_NO, KC_NO, KC_NO, KC_M,  KC_COMM, KC_DOT, KC_NO,   KC_NO,                            KC_UP,
         KC_NO,  KC_NO, KC_NO,               KC_NO,                        KC_NO,  TG(_YL), KC_NO, KC_NO,            KC_LEFT, KC_DOWN, KC_RGHT
     ),
-    /* [_AL] = LAYOUT(
+     [_AL] = LAYOUT(
         KC_ESC,  KC_F1,                KC_F2,        KC_F3,   KC_F4,   KC_F5,  KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,    KC_F12,           KC_PSCR, KC_SLCK, KC_PAUS,
         KC_GRV,  KC_1,                  KC_2,        KC_3,    KC_4,    KC_5,   KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,   KC_EQL,  KC_BSPC, KC_INS,  KC_HOME, KC_PGUP,
         KC_TAB,  KC_Q,                  KC_W,        XP(L_EPSI, U_EPSI),    KC_R,    KC_T,   KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,   KC_RBRC, KC_BSLS, KC_DEL,  KC_END,  KC_PGDN,
@@ -146,14 +282,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL, KC_LGUI, KC_LALT,                   KC_SPC,                            KC_RALT, TG(_AL), KC_APP,    KC_RCTL,          KC_LEFT, KC_DOWN, KC_RGHT
     ), */
        [_AL] = LAYOUT(
-        KC_ESC,  KC_F1,                KC_F2,        KC_F3,   KC_F4,   KC_F5,  KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,    KC_F12,           KC_PSCR, KC_SLCK, KC_PAUS,
+        KC_ESC,  KC_F1,                 KC_F2,        KC_F3,   KC_F4,   KC_F5,  KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,    KC_F12,           KC_PSCR, KC_SLCK, KC_PAUS,
         KC_GRV,  KC_1,                  KC_2,        KC_3,    KC_4,    KC_5,   KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,   KC_EQL,  KC_BSPC, KC_INS,  KC_HOME, KC_PGUP,
-        KC_TAB,  KC_Q,                  KC_W,        XP(L_EPSI, U_EPSI),    KC_R,    KC_T,   KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,   KC_RBRC, KC_BSLS, KC_DEL,  KC_END,  KC_PGDN,
-        KC_CAPS, XP(L_ALPH, U_ALPH),    KC_S,        KC_NO,    KC_F,    KC_G,   KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,   KC_ENT,
-        KC_LSFT, KC_NO,    KC_X,        KC_C,    KC_V,    KC_NO,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_SFTENT,                            KC_UP,
+        KC_TAB,  KC_Q,                  XP(L_OMEG, U_OMEG),        XP(L_EPSI, U_EPSI),    XP(L_RHO, U_RHO),    XP(L_TAU, U_TAU),   XP(L_THET, U_THET),    XP(L_MU, U_MU),    XP(L_IOTA, U_IOTA),    XP(L_OMIC, U_OMIC),    XP(L_PI, U_PI),    KC_LBRC,   KC_RBRC, KC_BSLS, KC_DEL,  KC_END,  KC_PGDN,
+        KC_CAPS, XP(L_ALPH, U_ALPH),    XP(L_SIGM, U_SIGM),        XP(L_DELT, U_DELT),    XP(L_PHI, U_PHI),    XP(L_GAMM, U_GAMM),   XP(L_ETA, U_ETA),    KC_J,    XP(L_KAPP, U_KAPP),    XP(L_LAMB, U_LAMB),    KC_SCLN, KC_QUOT,   KC_ENT,
+        KC_LSFT, XP(L_ZETA, U_ZETA),    XP(L_XI, U_XI),            XP(L_CHI, U_CHI),      XP(L_PSI, U_PSI),    XP(L_BETA, U_BETA),   XP(L_NU, U_NU),    XP(L_MU,U_MU),    KC_COMM, KC_DOT,  KC_SLSH, KC_SFTENT,                            KC_UP,
         KC_LCTL, KC_LGUI, KC_LALT,                   KC_SPC,                            KC_RALT, TG(_AL), KC_APP,    KC_RCTL,          KC_LEFT, KC_DOWN, KC_RGHT
     ),
-
+       [_A2] = LAYOUT(
+        KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,           KC_PSCR, KC_SLCK, KC_PAUS,
+        KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, X(NEQ),  KC_BSPC, KC_INS,  KC_HOME, KC_PGUP,
+        KC_TAB,  X(MTSET),    X(UNION),    X(INTERSECTION),    X(DELTA),    X(NABLA),    X(SUBSET),    X(SUPERSET),    X(NOTSUBSET),    X(NOTSUPSET),    X(ISIN),    X(ISNOTIN), X(IDENT), KC_BSLS, KC_DEL,  KC_END,  KC_PGDN,
+        KC_CAPS, X(APPROX),    X(PROP),    X(LTEQ),    X(GTEQ),    X(THFORE),    X(BCOS),    X(DERIVD),    X(INFRD),    X(TTOLOGY),    X(CDICTN), KC_QUOT, KC_ENT,
+        KC_LSFT, X(LOGAND),    X(LOGOR),   X(LOGEQUIV),    X(LOGCONS),    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,                            KC_UP,
+        KC_LCTL, KC_LGUI, KC_LALT,                   KC_SPC,                             KC_RALT, TG(_A2),   KC_APP,  KC_RCTL,          KC_LEFT, KC_DOWN, KC_RGHT
+    ),
     /*
     [X] = LAYOUT(
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______, _______, _______,
@@ -187,14 +330,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #define _______ {0, 0, 0}
 
 const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][3] = {
-    [_FL] = {
+    /*[_FL] = {
         _______, CORAL,   CORAL,   _______, _______, CORAL,   CORAL,   _______, _______, CORAL,   _______, YELLOW,  YELLOW,           TEAL,    GOLD,   GOLD,
         _______, _______, PINK,    PINK,    PINK,    PINK,    _______, _______, _______, GREEN,   GREEN,   GREEN,   GREEN,   _______, TEAL,    TEAL,   TEAL,
         ORANGE,  ORANGE,  ORANGE,  ORANGE,  ORANGE,  ORANGE,  _______, AZURE,   AZURE,   _______, _______, _______, _______, _______, TEAL,    TEAL,   TEAL,
         _______, ORANGE,  ORANGE,  ORANGE,  ORANGE,  ORANGE,  _______, _______, _______, _______, _______, _______, _______,
         _______, ORANGE,  _______, CORAL,   _______, AZURE,   AZURE,   _______, _______, _______, _______, AZURE,                              SPRING,
         _______, _______, _______,                   _______,                            _______, PINK,    _______, AZURE,            _______, SPRING, _______
-    },
+    },*/
+    [_FL] = {
+        _______, MAGENT,  MAGENT,  MAGENT,  MAGENT,   MAGENT,  _______, _______, _______,  YELLOW,  YELLOW, YELLOW,  YELLOW,            TEAL,    TEAL,   TEAL,
+        _______, GREEN,   GREEN,   _______, _______, _______,  _______,   AZURE,   AZURE,   AZURE,  _______, _______, _______, _______, TEAL,    TEAL,   TEAL,
+        ORANGE,  ORANGE,  ORANGE,  ORANGE,  ORANGE,   ORANGE,  _______,   AZURE,   AZURE,   AZURE,  _______, _______, _______, _______, TEAL,    TEAL,   TEAL,
+        _______, ORANGE,  ORANGE,  ORANGE,  ORANGE,   ORANGE,  _______,   AZURE,   AZURE,   AZURE,    AZURE, _______, _______,
+        _______, ORANGE,  _______, CORAL,   _______,   AZURE,  AZURE,     AZURE,   AZURE,   AZURE,    AZURE, _______,                              SPRING,
+        _______, _______, _______,                   _______,                            _______,     PINK, _______, _______,            _______, SPRING, _______
+    },/*
     [_ML] = {
         _______, GOLD,    GOLD,    GOLD,   _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______, _______, _______,
         _______, MAGENT,  MAGENT,  MAGENT, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
@@ -226,6 +377,30 @@ const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][3] = {
         _______, BLUE,    _______, BLUE,    _______, MAGENT,  _______, GREEN,   GREEN,   GREEN,   MAGENT,  _______, _______,
         _______, ORANGE,  ORANGE,  _______, _______, _______, _______, RED,     MAGENT,  MAGENT,  _______, _______,                            GREEN,
         _______, _______, _______,                   _______,                   _______, PINK,    _______, _______,                   BLUE,    GREEN,   BLUE
+    },*/
+    [_AL] = {
+        GREEN,     GREEN,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN,              _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,
+        _______, _______,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN, _______, _______, _______,     _______, _______, _______,
+        _______,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN, _______, _______, _______,
+        _______,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN,   GREEN, _______, _______, _______, _______,                                  GREEN,
+        _______, _______, _______,                   _______,                   _______,    PINK, _______, _______,                          BLUE,   GREEN,     BLUE
+    },/*
+    [_A@] = {
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,              _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______,                            GREEN,
+        _______, _______, _______,                   _______,                   _______, _______,  _______, _______,                   BLUE,    GREEN,   BLUE
+    },*/
+    [_A2] = {
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,              _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,
+           YELLOW,    YELLOW,    YELLOW,    YELLOW,    YELLOW,    YELLOW,    YELLOW,    YELLOW,    YELLOW,    YELLOW,    YELLOW,    YELLOW,    YELLOW, _______,     _______, _______, _______,
+           YELLOW,    YELLOW,    YELLOW,    YELLOW,    YELLOW,    YELLOW,    YELLOW,    YELLOW,    YELLOW,    YELLOW,    YELLOW,    YELLOW, _______,
+           YELLOW,    YELLOW,    YELLOW,    YELLOW, _______, _______, _______, _______, _______, _______,  _______, _______,                            GREEN,
+        _______, _______, _______,                   _______,                   _______,    PINK,  _______, _______,                   BLUE,    GREEN,   BLUE
     },
 };
 
@@ -240,12 +415,13 @@ void matrix_init_user(void) {
     debug_matrix=true;
     debug_keyboard=true;
     debug_mouse=true;
-
     idle_second_counter = 0;                            // Counter for number of seconds keyboard has been idle.
     key_event_counter = 0;                              // Counter to determine if keys are being held, neutral at 0.
     rgb_time_out_seconds = RGB_DEFAULT_TIME_OUT;        // RGB timeout initialized to its default configure in keymap.h
-    rgb_time_out_enable = false;                        // Disable RGB timeout by default. Enable using toggle key.
-    rgb_time_out_user_value = false;                    // Has to have the same initial value as rgb_time_out_enable.
+    //rgb_time_out_enable = false;                        // Disable RGB timeout by default. Enable using toggle key.
+    rgb_time_out_enable = true;                        // Enable RGB timeout by default. disable using toggle key.
+    //rgb_time_out_user_value = false;                    // Has to have the same initial value as rgb_time_out_enable.
+    rgb_time_out_user_value = true;                    // Has to have the same initial value as rgb_time_out_enable.
     rgb_enabled_flag = true;                            // Initially, keyboard RGB is enabled. Change to false config.h initializes RGB disabled.
     rgb_time_out_fast_mode_enabled = false;             // RGB timeout fast mode disabled initially.
     rgb_time_out_saved_flag = rgb_matrix_get_flags();   // Save RGB matrix state for when keyboard comes back from ide.

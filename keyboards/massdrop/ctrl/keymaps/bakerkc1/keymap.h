@@ -54,14 +54,17 @@ enum layout_names {
     _YL,         // Yakuake Layout: Yakuake drop-down terminal shortcuts and macros
     _EL,         // KDE Layout: Shortcuts for KDE desktop using default KDE shortcuts settings
     _AL,         // Extra layer: greek and mathematical symbols in unicode
+    _A2,         // Extra layer: set,logical and mathematical symbols in unicode
 };
 
 enum tapdance_keycodes {
     TD_LGUI_ML = 0,     // Tap dance key to switch to mouse layer _ML
     TD_APP_YL,
+    TD_APP_AL,
     TD_CTRL_TERM,       // Tap dance key to open terminal on LCTRL double press
     TD_TILDE_HASH,      // Tap dance key to use backslash pipe as KC_NUHS
-    TD_RCTRL_AL,        // go to _AL
+    TD_RCTRL_A2,        // go to _AL
+    TD_RALT_A2,         // go to A2
 };
 
 enum ctrl_keycodes {
