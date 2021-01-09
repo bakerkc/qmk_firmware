@@ -25,9 +25,13 @@
 #define PURPLE {HSV_PURPLE}
 #define MAGENT {HSV_MAGENTA}
 #define PINK {HSV_PINK}
+#define WHITE {HSV_WHITE}
+#define BLACK {HSV_BLACK}
+#define OFF {HSV_OFF}
+#define NOFF {HSV_NOFF}
 
 //========================================================== CONFIGURABLE DEFAULTS ==========================================================
-#define RGB_DEFAULT_TIME_OUT 30
+#define RGB_DEFAULT_TIME_OUT 300
 #define RGB_FAST_MODE_TIME_OUT 3
 #define RGB_TIME_OUT_MAX 600
 #define RGB_TIME_OUT_MIN 10
@@ -55,6 +59,7 @@ enum layout_names {
     _EL,         // KDE Layout: Shortcuts for KDE desktop using default KDE shortcuts settings
     _AL,         // Extra layer: greek and mathematical symbols in unicode
     _A2,         // Extra layer: set,logical and mathematical symbols in unicode
+    _MS,         // Extra layer: mouse on arrow keys
 };
 
 enum tapdance_keycodes {
@@ -65,6 +70,7 @@ enum tapdance_keycodes {
     TD_TILDE_HASH,      // Tap dance key to use backslash pipe as KC_NUHS
     TD_RCTRL_A2,        // go to _AL
     TD_RALT_A2,         // go to A2
+    TD_RALT_MS,         // go to MS
 };
 
 enum ctrl_keycodes {

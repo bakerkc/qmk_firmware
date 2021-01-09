@@ -36,6 +36,7 @@
 #define RGB_PINK 0xFF, 0x80, 0xBF
 #define RGB_BLACK 0x00, 0x00, 0x00
 #define RGB_OFF RGB_BLACK
+#define RGB_NOFF 0x01, 0x01, 0x01
 
 /*            HSV COLORS            */
 #define HSV_WHITE 0, 0, 255
@@ -58,7 +59,7 @@
 #define HSV_PINK 234, 128, 255
 #define HSV_BLACK 0, 0, 0
 #define HSV_OFF HSV_BLACK
-
+#define HSV_NOFF 1, 1, 1
 /*
 ########################################################################################
 ##                                                                                    ##
