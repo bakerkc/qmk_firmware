@@ -137,3 +137,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define BOOTMAGIC_LITE_COLUMN 0
 
 #define USB_MAX_POWER_CONSUMPTION 100
+#define UNICODE_SELECTED_MODES UC_LNX
+

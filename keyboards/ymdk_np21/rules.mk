@@ -7,6 +7,7 @@ BOOTLOADER = bootloadHID
 # Build Options
 #   change yes to no to disable
 #
+UNICODEMAP_ENABLE = yes
 BOOTMAGIC_ENABLE = lite     # Virtual DIP switch configuration
 MOUSEKEY_ENABLE = no        # Mouse keys
 EXTRAKEY_ENABLE = yes       # Audio control and System control
@@ -17,5 +18,4 @@ SLEEP_LED_ENABLE = no       # Breathing sleep LED during USB suspend
 BACKLIGHT_ENABLE = yes      # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = yes       # Enable keyboard RGB underglow
 WS2812_DRIVER = i2c
-
 LAYOUTS = ortho_6x4 numpad_6x4

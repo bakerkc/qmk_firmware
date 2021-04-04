@@ -71,6 +71,9 @@ enum tapdance_keycodes {
     TD_RCTRL_A2,        // go to _AL
     TD_RALT_A2,         // go to A2
     TD_RALT_MS,         // go to MS
+    TD_INVBANG,       // 1 key
+    TD_POUND,
+    TD_QUOTE_AT,
 };
 
 enum ctrl_keycodes {
